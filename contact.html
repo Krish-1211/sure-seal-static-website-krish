@@ -272,17 +272,9 @@
                             <div class="col-lg-12">
                                 <textarea name="message" id="" cols="30" rows="6" placeholder="Message"></textarea>
                             </div>
-                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-                        <script src="https://www.google.com/recaptcha/api.js?render=6LefZlMrAAAAABaAjX3Qryzgp2m_nmZD_dAjMjBp"></script>
-                        <script>
-                            grecaptcha.ready(function() {
-                                grecaptcha.execute('6LefZlMrAAAAABaAjX3Qryzgp2m_nmZD_dAjMjBp', {
-                                    action: 'contact_form'
-                                }).then(function(token) {
-                                    document.getElementById('g-recaptcha-response').value = token;
-                                });
-                            });
-                        </script>
+                            
+                        
+                        
                             <button
                                 class="btn btn-fancy btn-large btn-fast-blue btn-round-edge w-100 no-margin-bottom"
                                 type="submit" name="submit">Submit Message</button>
@@ -317,17 +309,9 @@
                         <form action="https://suresealsealants.com.au/newsletters" method="post">
                             <input type="hidden" name="_token" value="dItDgNYUYt75Jnkw65iypUpK7hBC3iSL0mjkIxeo" autocomplete="off">                            <input class="border-radius-5px large-input border-0 box-shadow-extra-large bg-white m-0 required" name="email" placeholder="Enter your email address" type="email">
                             <!--<input type="hidden" name="redirect" value="">-->
-                            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-newsletter">
-                            <script src="https://www.google.com/recaptcha/api.js?render=6LefZlMrAAAAABaAjX3Qryzgp2m_nmZD_dAjMjBp"></script>
-                        <script>
-                            grecaptcha.ready(function() {
-                                grecaptcha.execute('6LefZlMrAAAAABaAjX3Qryzgp2m_nmZD_dAjMjBp', {
-                                    action: 'contact_form'
-                                }).then(function(token) {
-                                    document.getElementById('g-recaptcha-newsletter').value = token;
-                                });
-                            });
-                        </script>
+                            
+                            
+                        
                             <button type="submit" class="btn btn-medium line-height-18px margin-10px-right border-left border-width-1px border-color-black-transparent xs-no-margin-right"><i class="far fa-envelope text-extra-dark-gray icon-very-small left-icon xs-no-margin-right"></i><span class="d-none d-sm-inline-block">subscribe</span></button>
                             <div class="form-results border-radius-5px position-absolute d-none"></div>
                         </form>
