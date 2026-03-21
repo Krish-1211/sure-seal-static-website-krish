@@ -186,13 +186,7 @@
                                         <i class="line-icon-Phone-2 icon-medium text-fast-blue"></i>
                                     </div>
                                     <ul class="list-style-03">
-                                        <!--<li><a href="#" class="text-dark"><span>03 9561 8899</span></a></li>-->
-                                        <li><a href="tel:(03)97962709" class="text-dark"><span>ACT: (03) 9796 2709</span></a></li>
-                                        <li><a href="tel:(03)97962709" class="text-dark"><span>NSW: (03) 9796 2709</span></a></li>
-                                        <li><a href="tel:(07)55687037" class="text-dark"><span>QLD: (07)  5568 7037</span></a></li>
-                                        <li><a href="tel:(03)97962709" class="text-dark"><span>VIC: (03) 9796 2709</span></a></li>
-                                        <li><a href="tel:(03)97962709" class="text-dark"><span>SA: (03) 9796 2709</span></a></li>
-                                        <li><a href="tel:(03)97962709" class="text-dark"><span>WA: (03) 9796 2709</span></a></li>
+                                        <li><a href="tel:(03)97962709" class="text-dark"><span>(03) 9796 2709</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -219,8 +213,8 @@
                     <h5 class="alt-font text-dark-charcoal font-weight-700 text-uppercase letter-spacing-minus-1px margin-40px-bottom w-80 mx-auto xs-w-100">
                          Submit Form To Get A Quote</h5>
                     <!-- start contact form -->
-                                                        <form action="contact.html" method="post" class="margin-30px-bottom">
-                        <input type="hidden" name="_token" value="dItDgNYUYt75Jnkw65iypUpK7hBC3iSL0mjkIxeo" autocomplete="off">                        <div class="row">
+                    <form onsubmit="handleContactSubmit(event)" class="margin-30px-bottom">
+                        <div class="row">
                             <div class="col-lg-6">
                                 <input class="medium-input border-radius-5px margin-25px-bottom required"
                                     type="text" name="name" placeholder="Name" />
@@ -337,15 +331,8 @@
             <!-- start feature box item -->
             <div class="col text-center md-margin-40px-bottom last-paragraph-no-margin wow animate__fadeIn" data-wow-delay="0.2s">
                 <i class="feather icon-feather-phone-call icon-small text-fast-blue margin-25px-bottom sm-margin-10px-bottom d-block"></i>
-                <div class="text-extra-dark-gray text-uppercase text-medium font-weight-600 alt-font letter-spacing-1px margin-10px-bottom">Let's Talk</div>
-                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(03)97962709">ACT: (03) 9796 2709</a>
-                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(03)97962709">NSW: (03) 9796 2709</a>
-                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(07)55687037">QLD: (07)  5568 7037</a>
-                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(03)97962709">VIC: (03) 9796 2709</a>
-                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(03)97962709">SA: (03) 9796 2709</a>
-                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(03)97962709">WA: (03) 9796 2709</a>
-                <!--<p class="w-70 lg-w-100 sm-margin-10px-bottom mx-auto">Phone: <a href="tel:0397962709">03 9796 2709</a>-->
-                    
+                <div class="text-extra-dark-gray text-uppercase text-medium font-weight-600 alt-font letter-spacing-1px margin-10px-bottom">Contact Us</div>
+                <p class="w-70 lg-w-100 mb-2 sm-margin-10px-bottom mx-auto"><a href="tel:(03)97962709">(03) 9796 2709</a></p>
             </div>
             <!-- end feature box item -->
             <!-- start feature box item -->
@@ -392,6 +379,37 @@
 <script type="text/javascript" src="public/js/jquery.min.js"></script>
 <script type="text/javascript" src="public/js/theme-vendors.min.js"></script>
 <script type="text/javascript" src="public/js/main.js"></script>
+
+<script>
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    // Extract values
+    const name = form.elements['name'].value;
+    const phone = form.elements['phone'].value;
+    const email = form.elements['email'].value;
+    const code = form.elements['code'].value;
+    const surface = form.elements['surface'].value;
+    const product = form.elements['product'].value;
+    const message = form.elements['message'].value;
+
+    const subject = `New Inquiry from ${name}`;
+    const body = `Inquiry Details:
+----------------
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Post Code: ${code}
+Type Of Surface: ${surface}
+Selected Product: ${product}
+
+Message:
+${message}`;
+
+    const mailtoUrl = `mailto:sales@suresealsealants.com.au?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+}
+</script>
 
 
 
